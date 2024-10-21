@@ -46,9 +46,9 @@ module.exports = function toReadable(number) {
         const first = ten[0];
 
         if (first === "1") {
-            getAfterTen(ten);
+            return getAfterTen(ten);
         } else {
-            getTens(first);
+            return getTens(first);
         }
     }
 
@@ -73,8 +73,9 @@ module.exports = function toReadable(number) {
     switch (numberToString.length) {
         case 1:
             return getUnits(numberToString);
+            break;
 
         case 2:
-            return `${makeTens(numberToString)}${addUnit(numberToString)}`;
+            return `${makeTens(numberToString)} ${addUnit(numberToString)}`;
     }
 };
